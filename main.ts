@@ -10,7 +10,7 @@ function createWindow(): BrowserWindow {
 
   const electronScreen = screen;
   const size = electronScreen.getPrimaryDisplay().workAreaSize;
-  const iconImage = `${__dirname}/dist/assets/icons/logo.png`;
+  const iconImage = `${__dirname}/dist/assets/icons/favicon.png`;
 
   const fixedWidth = 800;
   const fixedHeight = 600;
@@ -21,6 +21,8 @@ function createWindow(): BrowserWindow {
     y: 0,
     width: fixedWidth,
     height: fixedHeight,
+    // center: true,
+    // frame: false,
     // maximizable: false,
     icon: iconImage,
     webPreferences: {
@@ -29,14 +31,14 @@ function createWindow(): BrowserWindow {
     },
   });
 
+  win.center();
+  win.removeMenu();
+
   if (serve) {
 
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
     // win.setMinimumSize(fixedWidth, fixedHeight);
     // win.setMaximumSize(fixedWidth, fixedHeight);
-    win.center();
-
-    win.setMenu(null);
 
     require('electron-reload')(__dirname, {
       electron: require(`${__dirname}/node_modules/electron`)

@@ -2,13 +2,11 @@
   <div class="container d-flex flex-column justify-content-between h-100">
     <div class="d-flex justify-content-between">
       <div class="d-flex align-items-center">
-        <img class="logo" src="assets/icons/logo.png" alt="logo">
+        <img class="logo" src="assets/icons/favicon.png" alt="logo">
         <span class="mx-2 h4 my-0">SCRAPE</span>
       </div>
-      <div class="d-flex align-items-center">
-        <a href="">
-          <img class="refresh-logo" src="assets/icons/icon-refresh.png" alt="refresh-logo">
-        </a>
+      <div (click)="refresh()" class="d-flex align-items-center">
+        <img class="refresh-logo" src="assets/icons/icon-refresh.png" alt="refresh-logo">
       </div>
     </div>
     <section class="pb-5">
