@@ -1,3 +1,14 @@
 :host {
-  
+  .container{
+    img{
+      &.logo{
+        width: 50px;
+        height: auto;
+      }
+      &.refresh-logo{
+        width: 25px;
+        height: auto;
+      }
+    }
+  }
 }

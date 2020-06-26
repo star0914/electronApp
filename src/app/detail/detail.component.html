@@ -1,7 +1,14 @@
-<div class="container">
-  <h1 class="title">
-    {{ 'PAGES.DETAIL.TITLE' | translate }}
-  </h1>
+<div class="w-100 vh-100 bg-dark p-5 text-white">
+  <div class="container d-flex flex-column justify-content-between h-100">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex align-items-center">
+        <img class="logo" src="assets/icons/logo.png" alt="logo">
+        <span class="mx-2 h4 my-0">{{ 'PAGES.DETAIL.TITLE' | translate }}</span>
+      </div>
+    </div>
 
-  <a routerLink="/">{{ 'PAGES.DETAIL.BACK_TO_HOME' | translate }}</a>
+    <div class="text-right">
+      <button routerLink="/" class="btn btn-primary">{{ 'PAGES.DETAIL.BACK_TO_HOME' | translate }}</button>
+    </div>
+  </div>
 </div>

@@ -10,13 +10,19 @@ function createWindow(): BrowserWindow {
 
   const electronScreen = screen;
   const size = electronScreen.getPrimaryDisplay().workAreaSize;
+  const iconImage = `${__dirname}/dist/assets/icons/logo.png`;
+
+  const fixedWidth = 800;
+  const fixedHeight = 600;
 
   // Create the browser window.
   win = new BrowserWindow({
     x: 0,
     y: 0,
-    width: size.width,
-    height: size.height,
+    width: fixedWidth,
+    height: fixedHeight,
+    // maximizable: false,
+    icon: iconImage,
     webPreferences: {
       nodeIntegration: true,
       allowRunningInsecureContent: (serve) ? true : false,
@@ -26,6 +32,11 @@ function createWindow(): BrowserWindow {
   if (serve) {
 
     win.webContents.openDevTools();
+    // win.setMinimumSize(fixedWidth, fixedHeight);
+    // win.setMaximumSize(fixedWidth, fixedHeight);
+    win.center();
+
+    win.setMenu(null);
 
     require('electron-reload')(__dirname, {
       electron: require(`${__dirname}/node_modules/electron`)
