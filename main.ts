@@ -21,7 +21,6 @@ function createWindow(): BrowserWindow {
     y: 0,
     width: fixedWidth,
     height: fixedHeight,
-    // center: true,
     // frame: false,
     // maximizable: false,
     icon: iconImage,
